@@ -5,25 +5,24 @@ namespace Course {
     class Program {
         static void Main(string[] args) {
 
-            string produto1 = "Computador";
-            string produto2 = "Mesa de escritorio";
-            byte idade = 30;
-            int codigo = 5290;
-            char genero = 'M';
-            double preco1 = 2100.0;
-            double preco2 = 650.50;
-            double medida = 53.234567;
+            int n1 = 3 + 4 * 2;
+            int n2 = (3 + 4) * 2;
+            int n3 = 17 % 3;
+            double n4 = 10.0 / 8;
 
-            Console.WriteLine("Produtos");
-            Console.WriteLine($"{produto1}, cujo preço é $ {preco1:F2}");
-            Console.WriteLine($"{produto2}, cujo preço é $ {preco2:F2}");
-            Console.WriteLine();
-            Console.WriteLine($"Registro: {idade} anos de idade, código {codigo} e gênero: {genero}");
-            Console.WriteLine();
-            Console.WriteLine($"Medida com oito casas decimais: {medida:F8}");
-            Console.WriteLine($"Arredondado (três casas decimais): {medida:F3}");
-            Console.WriteLine("Separador decimal invariant culture: "+ medida.ToString("F2",CultureInfo.InvariantCulture));
+            double a = 1.0 , b = -3.0, c = -4.0;
+            double delta = Math.Pow(b, 2.0) - 4.0 * a * c;
+            double x1 = (-b + Math.Sqrt(delta)) / (2.0 * a);
+            double x2 = (-b - Math.Sqrt(delta)) / (2.0 * a);
 
+            Console.WriteLine(n1);
+            Console.WriteLine(n2);
+            Console.WriteLine(n3);
+            Console.WriteLine(n4);
+            Console.WriteLine(delta);
+            Console.WriteLine(x1);
+            Console.WriteLine(x2);
+          
         }
     }
 }
