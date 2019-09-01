@@ -5,20 +5,29 @@ namespace Course {
     class Program {
         static void Main(string[] args) {
 
-            bool c1 = 2 > 3 && 4 != 5; //true
-            bool c2 = 2 > 3 || 4 != 5;
-            bool c3 = !(2 > 3) && 4 != 5; // true
+            /*Console.WriteLine("Entre com um número inteiro");
+            int x = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(c1);
-            Console.WriteLine(c2);
-            Console.WriteLine(c3);
-            Console.WriteLine("---------------");
+            if(x % 2 == 0) {
+                Console.WriteLine("Par!");
+            }
+            else {
+                Console.WriteLine("Impar!");
+            }*/
 
-            bool c4 = 10 < 5; // false
-            bool c5 = c1 || c3 && c4; // true
+            Console.WriteLine("Qual a hora atual");
+            int hora = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(c4);
-            Console.WriteLine(c5);
+            if (hora < 12) {
+                Console.WriteLine("Bom dia!");
+            }
+            else if (hora < 18) {
+                Console.WriteLine("Boa tarde");
+            }
+            else {
+                Console.WriteLine("Boa noite");
+            }
+
         }
     }
 }
