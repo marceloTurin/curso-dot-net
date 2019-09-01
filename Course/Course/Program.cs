@@ -5,23 +5,20 @@ namespace Course {
     class Program {
         static void Main(string[] args) {
 
-            int a = 10;
-            Console.WriteLine(a);
-            a += 2;
-            Console.WriteLine(a);
-            a *= 3;
-            Console.WriteLine(a);
+            double a;
+            float b;
 
-            string s = "ABC";
-            Console.WriteLine(s);
-            s += "DEF";
-            Console.WriteLine(s);
+            a = 5.1;
+            b = (float)a;
 
-            int aa = 10;
-            int b = aa++;
-            Console.WriteLine(aa);
             Console.WriteLine(b);
 
+
+            int n1 = 5;
+            int n2 = 2;
+
+            double resultado = (double) n1 / n2;
+            Console.WriteLine(resultado);
           
         }
     }
