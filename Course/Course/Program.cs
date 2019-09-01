@@ -5,27 +5,27 @@ namespace Course {
     class Program {
         static void Main(string[] args) {
 
-            Console.WriteLine("Entre com seu nome completo");
-            string nomeCompleto = Console.ReadLine();
-            Console.WriteLine("Quantos quartos tem na sua casa");
-            int qtdQuarto = int.Parse(Console.ReadLine());
-            Console.WriteLine("Entre com o preço de um produto");
-            double precoProduto = double.Parse(Console.ReadLine());
-            Console.WriteLine("Entre seu último nome, idade e altura (mesma linha)");
-            string[] v = Console.ReadLine().Split(' ');
-            string nome = v[0];
-            int idade = int.Parse(v[1]);
-            double altura = double.Parse(v[2]);
+            int a = 10;
+            bool c1 = a < 10;
+            bool c2 = a < 20;
+            bool c3 = a > 10;
+            bool c4 = a > 5;
 
-            Console.WriteLine(nomeCompleto);
-            Console.WriteLine(qtdQuarto);
-            Console.WriteLine(precoProduto.ToString("F2"),CultureInfo.InvariantCulture);
-            Console.WriteLine(nome);
-            Console.WriteLine(idade);
-            Console.WriteLine(altura.ToString("F2"));
+            Console.WriteLine(c1);
+            Console.WriteLine(c2);
+            Console.WriteLine(c3);
+            Console.WriteLine(c4);
+            Console.WriteLine("------------------");
 
-            //Console.WriteLine(altura.ToString("F2"),CultureInfo.InvariantCulture);
-          
+            bool c5 = a <= 10;
+            bool c6 = a >= 10;
+            bool c7 = a == 10;
+            bool c8 = a != 10;
+
+            Console.WriteLine(c5);
+            Console.WriteLine(c6);
+            Console.WriteLine(c7);
+            Console.WriteLine(c8);
         }
     }
 }
