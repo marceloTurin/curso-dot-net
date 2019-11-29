@@ -15,6 +15,8 @@ namespace Course {
             Console.WriteLine("Quantidade no estoque:" );
             p.Quantidade = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Dados do produto: " + p);
+
         }
 
     }
