@@ -11,6 +11,14 @@ namespace Course {
             return Preco * Quantidade;
         }
 
+        public void AdicionarProdutos(int quantidade) {
+            Quantidade += quantidade;
+        }
+
+        public void RemoverProdutos(int quantidade) {
+            Quantidade -= quantidade;
+        }
+
         //Sobreposição da classe Object
         public override string ToString() {
             return Nome
