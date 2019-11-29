@@ -3,37 +3,33 @@ using System.Globalization;
 
 namespace Course {
     class Program {
+        //Classes estaticas tem que ter atributos e classes estaticas;
+
+        static double Pi = 3.14;
         static void Main(string[] args) {
 
-            Produto p = new Produto();
+            Console.Write("Entre o valor do raio: ");
+            double raio = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Entre com os dados do produto");
-            Console.WriteLine("Nome: ");
-            p.Nome = Console.ReadLine();
-            Console.WriteLine("Preço: ");
-            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            Console.WriteLine("Quantidade no estoque:" );
-            p.Quantidade = int.Parse(Console.ReadLine());
+            double circ = Circunferencia(raio);
+            double volume = Volume(raio);
 
-            Console.WriteLine();
-            Console.WriteLine("Dados do produto: " + p);
-            Console.WriteLine();
+            Console.WriteLine("Circunferencia: " + circ.ToString("F2",CultureInfo.InvariantCulture));
+            Console.WriteLine("Volume: " + volume.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine("valor de PI: " + Pi.ToString("F2", CultureInfo.InvariantCulture));
 
-            Console.WriteLine("Digite o número de produtos a ser adicionado ao estoque: ");
-            int qte = int.Parse(Console.ReadLine());
-            p.AdicionarProdutos(qte);
-            Console.WriteLine("Dados atualizados: " + p);
-
-            Console.WriteLine();
-            Console.WriteLine("Dados do produto: " + p);
-            Console.WriteLine();
-
-            Console.WriteLine("Digite o número de produtos a ser removido ao estoque: ");
-            qte = int.Parse(Console.ReadLine());
-            p.RemoverProdutos(qte);
-            Console.WriteLine("Dados atualizados: " + p);
 
         }
+
+        static double Circunferencia(double raio) {
+            return 2.0 * Pi * raio;
+        }
+
+        static double Volume(double r) {
+            return 4.0 / 3.0 * Pi * r * r * r;
+        }
+
+        
 
     }
 }
