@@ -9,20 +9,17 @@ namespace Course {
 
         //Construtores de classe usando sobrecarga
         public Produto() {
-            _quantidade = 10;
+            Quantidade = 10;
         }
 
         public Produto(string nome, double preco) : this() {
             _nome = nome;
-            _preco = preco;
+            Preco = preco;
 
         }
         public Produto(string nome, double preco, int quantidade) : this(nome, preco) {
-            _quantidade = quantidade;
+            Quantidade = quantidade;
         }
-
-
-
 
         //Properties do get set 
         public string Nome {
@@ -34,35 +31,27 @@ namespace Course {
             }
         }
 
-        public double Preco {
-            get { return _preco; }
-        }
-
-        public int Quantidade {
-            get { return _quantidade; }
-        }
 
         //Métodos
-
         public double ValorTotalEmEstoque() {
-            return _preco * _quantidade;
+            return Preco * Quantidade;
         }
 
         public void AdicionarProdutos(int quantidade) {
-            _quantidade += quantidade;
+            Quantidade += quantidade;
         }
 
         public void RemoverProdutos(int quantidade) {
-            _quantidade -= quantidade;
+            Quantidade -= quantidade;
         }
 
         //Sobreposição da classe Object
         public override string ToString() {
             return _nome
                 + ", $ "
-                + _preco.ToString("F2", CultureInfo.InvariantCulture)
+                + Preco.ToString("F2", CultureInfo.InvariantCulture)
                 + ", "
-                + _quantidade
+                + Quantidade
                 + " unidade, Total: $ "
                 + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
