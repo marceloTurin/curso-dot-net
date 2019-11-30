@@ -15,7 +15,9 @@ namespace Course {
             
    
 
-            Produto p = new Produto(nome, preco);
+            Produto p = new Produto(nome, preco); //Iniciando com construtor especifico
+            Produto p2 = new Produto(); // Iniciando com construtor padrao
+            Produto p3 = new Produto { Nome = "TV", Preco = 500.00, Quantidade = 5 }; // Iniciando com construtor passando dados diretamente
             
             Console.WriteLine();
             Console.WriteLine("Dados do produto: " + p);
