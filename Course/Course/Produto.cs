@@ -4,8 +4,8 @@ using System.Globalization;
 namespace Course {
     class Produto {
         private string _nome;
-        private double _preco;
-        private int _quantidade;
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
 
         //Construtores de classe usando sobrecarga
         public Produto() {
@@ -17,14 +17,16 @@ namespace Course {
             _preco = preco;
 
         }
-        public Produto(string nome,double preco, int quantidade) : this(nome,preco) {
+        public Produto(string nome, double preco, int quantidade) : this(nome, preco) {
             _quantidade = quantidade;
         }
 
 
 
-        public string Nome() {
-            get{ return _nome; }
+
+        //Properties do get set 
+        public string Nome {
+            get { return _nome; }
             set {
                 if (value != null && value.Length > 1) {
                     _nome = value;
@@ -32,13 +34,12 @@ namespace Course {
             }
         }
 
-     
-        public double GetPreco() {
-            return _preco;
+        public double Preco {
+            get { return _preco; }
         }
 
-        public double GetQuantidade() {
-            return _quantidade;
+        public int Quantidade {
+            get { return _quantidade; }
         }
 
         //Métodos
