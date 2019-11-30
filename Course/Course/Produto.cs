@@ -7,12 +7,22 @@ namespace Course {
         public double Preco;
         public int Quantidade;
 
-        //Construtor da classe
+        //Construtores de classe usando sobrecarga
+        public Produto() {
+
+        }
         public Produto(string nome,double preco, int quantidade) {
             Nome = nome;
             Preco = preco;
             Quantidade = quantidade;
         }
+
+        public Produto(string nome,double preco) {
+            Nome = nome;
+            Preco = preco;
+            Quantidade = 5;
+        }
+        /********************************************/
 
         public double ValorTotalEmEstoque() {
             return Preco * Quantidade;
