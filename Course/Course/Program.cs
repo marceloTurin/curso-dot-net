@@ -8,24 +8,12 @@ namespace Course {
             double? x = null;
             double? y = 10.0;
 
-            //Pega o valor atual ou o default da variavel
-            Console.WriteLine(x.GetValueOrDefault());
-            Console.WriteLine(y.GetValueOrDefault());
+            //Verifica se a variavel é nula se for coloca o numero 5;
+            double a = x ?? 5;
+            double b = y ?? 5;
 
-            //Verifica se a variavel tem valor retornando true ou false;
-            Console.WriteLine(x.HasValue);
-            Console.WriteLine(y.HasValue);
-
-            if(x.HasValue)
-                Console.WriteLine(x.Value);
-            else
-                Console.WriteLine("X is null");
-            
-            if(y.HasValue)
-                Console.WriteLine(y.Value);
-            else
-                Console.WriteLine("Y is null");
-
+            Console.WriteLine(a);
+            Console.WriteLine(b);
 
 
         }
