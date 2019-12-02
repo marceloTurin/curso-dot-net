@@ -5,9 +5,9 @@ using System.Text;
 namespace Course {
     class Calculator {
 
-        //O modificador ref faz uma referencia a variavel original, ou seja a funcao altera o valor da variavel passada no parametro;
-        public static void Triple(ref int x) {
-            x = x * 3;
+        //O modificador ref faz uma referencia a variavel original mas no caso não precisamos iniciar a variavel com um valor;
+        public static void Triple(int origin, out int result) {
+            result = origin * 3;
         }
     }
 }
