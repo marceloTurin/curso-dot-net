@@ -5,13 +5,9 @@ using System.Text;
 namespace Course {
     class Calculator {
 
-        //Colocando params podemos colcoar quantos parametros que quiser.
-        public static int Sum(params int[] numbers) {
-            int sum = 0;
-            for (int i = 0; i < numbers.Length; i++) {
-                sum += numbers[i];
-            }
-            return sum;
+        //O modificador ref faz uma referencia a variavel original, ou seja a funcao altera o valor da variavel passada no parametro;
+        public static void Triple(ref int x) {
+            x = x * 3;
         }
     }
 }
