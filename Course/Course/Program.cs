@@ -4,28 +4,13 @@ namespace Course {
     class Program {
         static void Main(string[] args) {
 
-            Console.WriteLine("Quantidade de produtos");
-            int n = int.Parse(Console.ReadLine());
+            int s1 = Calculator.Sum(2, 3);
+            int s2 = Calculator.Sum(4, 5, 6);
 
-            Product[] vect = new Product[n];
 
-            for (int i = 0; i < n; i++) {
-                Console.WriteLine("Digite o nome do produto e em seguida o preco");
-                string name = Console.ReadLine();
-                double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-
-                vect[i] = new Product { Name = name, Price = price };
-            }
-
-            double sum = 0.0;
-
-            for (int i = 0; i < n; i++) {
-                sum += vect[i].Price;
-            }
-
-            double avg = sum / n;
-            Console.WriteLine("AVERAGE PRICE = " + avg.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine(s1);
+            Console.WriteLine(s2);
         }
 
-    }     
+    }
 }
