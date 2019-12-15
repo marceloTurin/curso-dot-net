@@ -6,37 +6,35 @@ namespace Course {
     class Program {
         static void Main(string[] args) {
 
-            int n = int.Parse(Console.ReadLine());
+            HashSet<int> A = new HashSet<int>();
+            HashSet<int> B = new HashSet<int>();
 
-            int[,] mat = new int[n, n];
+            A.Add(5);
+            A.Add(3);
+            A.Add(8);
+            A.Add(9);
 
-            for(int i = 0; i < n; i++) {
+            B.Add(3);
+            B.Add(4);
+            B.Add(5);
 
-                string[] values = Console.ReadLine().Split(' ');
+            B.Remove(4);
 
-                for(int j = 0; j < n; j++) {
-                    mat[i, j] = int.Parse(values[j]);
-                }
+            A.ExceptWith(B);
+
+            foreach(int x in A){
+                Console.WriteLine(x);
             }
 
+            Console.WriteLine("Digite um valor inteiro: ");
+            int N = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Main diagonal: ");
-            for (int i = 0; i < n; i++) {
-                Console.Write(mat[i,i] + " ");
-            }
-            Console.WriteLine();
-
-
-            int count = 0;
-            for(int i = 0; i < n; i++) {
-                for(int j = 0; j < n; j++) {
-                    if(mat[i,j] < 0) {
-                        count++;
-                    }
-                }
+            if (B.Contains(N)) {
+                Console.WriteLine(N + " pertence ao conjunto B");
+            } else {
+                Console.WriteLine(N + " nao pertence ao conjunto B");
             }
 
-            Console.WriteLine("Negative numbers: " + count);
 
         }
 
