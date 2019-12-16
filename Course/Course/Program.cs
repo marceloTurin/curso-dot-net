@@ -6,39 +6,35 @@ namespace Course {
     class Program {
         static void Main(string[] args) {
 
-            string original = "abcde FGHIJ ABC abc DEFG    ";
+            /*Tipos de retorno de datas*/
+            DateTime d1 = DateTime.Now; //Retorna data e hora atual
+            DateTime d2 = new DateTime(2019,12,25); //Definindo uma data
+            DateTime d3 = new DateTime(2019, 12, 25, 20, 45, 03); //Definindo a hora
+            DateTime d4 = new DateTime(2019, 12, 25, 20, 45, 03,500); //Definindo o milisegundo
+            DateTime d5 = DateTime.Today; // Retorna a data atual com a hora zerada 
+            DateTime d6 = DateTime.UtcNow; // Retorna a hora universal 
 
-            string s1 = original.ToUpper(); // Converte todo mundo para maiusculo
-            string s2 = original.ToLower(); // Converte todo mundo para o minusculo
-            string s3 = original.Trim(); // Apaga os espaço em brancos
-            int n1 = original.IndexOf("bc"); // Procura a primeira posição da string 
-            int n2  = original.LastIndexOf("bc"); //Procura a ultima posição da string
-            string s4 = original.Substring(3); // Recorta a string a partir da posição 3
-            string s5 = original.Substring(3, 5); //Recorta a string a partir da posição 3 e somente os 5 caracteres seguintes
-            string s6 = original.Replace('a','x'); //Troca todos os caracteres a por x
-            string s7 = original.Replace("abc", "xy"); //Troca todos as string abc por xy
+            /*Tipos de parametros de datas*/
+            DateTime d7 = DateTime.Parse("2008-08-15");
+            DateTime d8 = DateTime.Parse("2000-08-15 13:05:58");
+            DateTime d9 = DateTime.Parse("21/08/2019");
+            DateTime d10 = DateTime.Parse("21/08/2020 13:14:59");
 
-            bool b1 = String.IsNullOrEmpty(original); // Testa se a variavel é nula ou vazio
-            bool b2 = String.IsNullOrWhiteSpace(original); //Testa se a variavel é nula ou tem varios espaços em brancos
+            DateTime d11 = DateTime.ParseExact("2000-08-15", "yyyy-MM-dd",CultureInfo.InvariantCulture);
+            DateTime d12 = DateTime.ParseExact("15/08/2000 13:05:58", "dd/MM/yyyy HH:mm:ss",CultureInfo.InvariantCulture);
 
+            Console.WriteLine(d1);
+            Console.WriteLine(d1.Ticks);
+            Console.WriteLine(d2);
+            Console.WriteLine(d3);
+            Console.WriteLine(d4);
 
-
-            Console.WriteLine("Original: -" + original + "-");
-            Console.WriteLine("ToUpper: -" + s1 + "-");
-            Console.WriteLine("ToLower: -" + s2 + "-");
-            Console.WriteLine("Trim: -" + s3 + "-");
-            Console.WriteLine("IndexOf('bc'): " + n1);
-            Console.WriteLine("LastIndexOf('bc'): " + n2);
-            Console.WriteLine("Substring(3):"  +s4);
-            Console.WriteLine("Substring(3,5): -" + s5+"-");
-            Console.WriteLine("Replace('a','x'): -" + s6 + "-");
-            Console.WriteLine("Replace('abc','xy'): -" + s7 + "-");
-            Console.WriteLine("IsNullOrEmpty: "+ b1);
-            Console.WriteLine("IsNullOrWhiteSpace: " + b2);
-
-
-
-
+            Console.WriteLine(d7);
+            Console.WriteLine(d8);
+            Console.WriteLine(d9);
+            Console.WriteLine(d10);
+            Console.WriteLine(d11);
+            Console.WriteLine(d12);
 
         }
 
