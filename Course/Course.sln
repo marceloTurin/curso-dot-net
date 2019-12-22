@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercicioListaFuncionario",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercicioMatrizes", "ExercicioMatrizes\ExercicioMatrizes.csproj", "{53A98B9E-7D3D-4F84-8A1F-0D44685BE5FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercicioComposicao", "ExercicioComposicao\ExercicioComposicao.csproj", "{D414A4EA-8EE0-4C88-953F-B627E31A67A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercicioComposicao", "ExercicioComposicao\ExercicioComposicao.csproj", "{D414A4EA-8EE0-4C88-953F-B627E31A67A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerancaPolimorfismo", "HerancaPolimorfismo\HerancaPolimorfismo.csproj", "{08F231E8-AE58-470B-B261-C0F1F306F728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerancaPolimorfismo", "HerancaPolimorfismo\HerancaPolimorfismo.csproj", "{08F231E8-AE58-470B-B261-C0F1F306F728}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercicioHerancaPolimorfismo", "ExercicioHerancaPolimorfismo\ExercicioHerancaPolimorfismo.csproj", "{A3D3D37D-B7E9-4DAE-A552-96AFD67F6E2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{08F231E8-AE58-470B-B261-C0F1F306F728}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08F231E8-AE58-470B-B261-C0F1F306F728}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08F231E8-AE58-470B-B261-C0F1F306F728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D3D37D-B7E9-4DAE-A552-96AFD67F6E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D3D37D-B7E9-4DAE-A552-96AFD67F6E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D3D37D-B7E9-4DAE-A552-96AFD67F6E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D3D37D-B7E9-4DAE-A552-96AFD67F6E2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
