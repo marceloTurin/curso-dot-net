@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace HerancaPolimorfismo.Entities {
-    class SavingAccount : Account {
+       class SavingAccount : Account {
 
         public double InteresRate { get; set; }
 
@@ -19,7 +19,7 @@ namespace HerancaPolimorfismo.Entities {
             Balance += Balance * InteresRate;
         }
 
-        public override void Withdraw(double amount) {
+        public  sealed override void Withdraw(double amount) {
             base.Withdraw(amount); // Faz a operação da super classse
             Balance -=  2;
         }
