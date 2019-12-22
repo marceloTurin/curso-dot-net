@@ -19,5 +19,11 @@ namespace HerancaPolimorfismo.Entities {
             Balance += Balance * InteresRate;
         }
 
+        public override void Withdraw(double amount) {
+            base.Withdraw(amount); // Faz a operação da super classse
+            Balance -=  2;
+        }
+
+
     }
 }
