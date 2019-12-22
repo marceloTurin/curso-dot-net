@@ -1,6 +1,6 @@
 ﻿
 namespace HerancaPolimorfismo.Entities {
-    class Account {
+    abstract class Account {
         public int Number { get;  set; }
         public string Holder { get; set; }
         public double Balance { get; protected set; }

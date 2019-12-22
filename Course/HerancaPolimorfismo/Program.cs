@@ -7,39 +7,25 @@ namespace HerancaPolimorfismo {
     class Program {
         static void Main(string[] args) {
 
-            List<Employee> list = new List<Employee>();
+            List<Account> list = new List<Account>();
 
-            Console.Write("Enter the number of employees: ");
-            int n = int.Parse(Console.ReadLine());
+            list.Add(new SavingAccount(1001,"Alex",500.0,0.01));
+            list.Add(new BusinessAcount(1002, "Maria", 500.0, 400.0));
+            list.Add(new SavingAccount(1003, "Bob", 500.0, 0.01));
+            list.Add(new BusinessAcount(1004, "Anna", 500.0,500.00));
 
-            for (int i = 1; i <= n; i++) {
-                Console.WriteLine($"Employee #{i} data: ");
-                Console.Write("Outsorced (y/n)? ");
-                char ch = char.Parse(Console.ReadLine());
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-                Console.Write("Hours: ");
-                int hours = int.Parse(Console.ReadLine());
-                Console.WriteLine("Value per hours");
-                double valuePerHours = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double sum =  0.0;
 
-                if(ch == 'y') {
-                    Console.WriteLine("Additional charge:");
-                    double additionalCharge = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
-                    list.Add(new OutsourcedEmployee(name, hours, valuePerHours, additionalCharge));
-                }
-                else {
-                    list.Add(new Employee(name, hours, valuePerHours));
-                }
+            foreach(Account acc in list) {
+                sum += acc.Balance;
             }
 
-            Console.WriteLine();
-            Console.WriteLine("PAYMENTS:");
+            Console.WriteLine("Total Balance: " + sum.ToString("F2",CultureInfo.InvariantCulture));
 
-            foreach(Employee emp in list) {
-                Console.WriteLine($"{emp.Name} - $ {emp.Payment().ToString("F2",CultureInfo.InvariantCulture)}");
+            foreach(Account acc in list) {
+                acc.Withdraw(10.0);
+                Console.WriteLine($"Updated balance for account {acc.Number}: {acc.Balance.ToString("F2",CultureInfo.InvariantCulture)}");
             }
-
         }
     }
 }
