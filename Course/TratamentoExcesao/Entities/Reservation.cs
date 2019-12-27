@@ -1,4 +1,5 @@
 ﻿using System;
+using TratamentoExcesao.Entities.Exceptions;
 
 
 namespace TratamentoExcesao.Entities {
@@ -12,6 +13,10 @@ namespace TratamentoExcesao.Entities {
         }
 
         public Reservation(int roomNumber, DateTime checkIn, DateTime checkOut) {
+            if (checkOut <= checkIn) {
+                throw new DomainException("Error in reservation: Check-out date must be after check-in a date");
+            }
+
             RoomNumber = roomNumber;
             CheckIn = checkIn;
             CheckOut = checkOut;
@@ -22,21 +27,19 @@ namespace TratamentoExcesao.Entities {
             return (int)duration.TotalDays;
         }
 
-        public string UpdatesDates(DateTime checkIn,DateTime checkOut) {
+        public void UpdatesDates(DateTime checkIn, DateTime checkOut) {
 
             DateTime now = DateTime.Now;
 
             if (checkIn <= now || checkIn <= now) {
-                return "Reservation dates for updates must be future dates";
+                throw new DomainException("Reservation dates for updates must be future dates");
             }
             if (checkOut <= checkIn) {
-                return "Error in reservation: Check-out date must be after check-in a date";
+                throw new DomainException("Error in reservation: Check-out date must be after check-in a date");
             }
 
             CheckOut = checkOut;
             CheckIn = checkIn;
-
-            return null;
         }
 
         public override string ToString() {
