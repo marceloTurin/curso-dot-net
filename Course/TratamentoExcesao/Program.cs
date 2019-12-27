@@ -1,23 +1,46 @@
 ﻿using System;
+using TratamentoExcesao.Entities;
 
 namespace TratamentoExcesao {
     class Program {
         static void Main(string[] args) {
 
-            try {
-                int n1 = int.Parse(Console.ReadLine());
-                int n2 = int.Parse(Console.ReadLine());
+            Console.Write("Room number: ");
+            int number = int.Parse(Console.ReadLine());
+            Console.Write("Check-in date (dd/MM/yyyy): ");
+            DateTime checkIn = DateTime.Parse(Console.ReadLine());
+            Console.Write("Check-out date (dd/MM/yyyy): ");
+            DateTime checkOut = DateTime.Parse(Console.ReadLine());
 
-                int result = n1 / n2;
-                Console.WriteLine(result);
+            if(checkOut <= checkIn) {
+                Console.WriteLine("Error in reservation: Check-out date must be after check-in a date");
             }
-            catch (DivideByZeroException) {
-                Console.WriteLine("Division by zero in not allowed");
+            else {
+                Reservation reservation = new Reservation(number, checkIn, checkOut);
+                Console.WriteLine($"Reservation: {reservation}");
+
+                Console.WriteLine();
+                Console.WriteLine("Enter data to update the reservation:");
+                checkIn = DateTime.Parse(Console.ReadLine());
+                Console.Write("Check-out date (dd/MM/yyyy): ");
+                checkOut = DateTime.Parse(Console.ReadLine());
+
+                DateTime now = DateTime.Now;
+
+                if(checkIn <= now || checkIn <= now) {
+                    Console.WriteLine("Error in reservation: Reservation dates for updates must be future dates");
+                }
+                else if (checkOut <= checkIn) {
+                    Console.WriteLine("Error in reservation: Check-out date must be after check-in a date");
+                } else {
+                    reservation.UpdatesDates(checkIn, checkOut);
+                    Console.WriteLine($"Reservation: {reservation}");
+                }
+
             }
-            catch(FormatException e) {
-                Console.WriteLine($"Format error! {e.Message}");
-            }
-         
+           
+
+
         }
     }
 }
