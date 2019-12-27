@@ -25,15 +25,12 @@ namespace TratamentoExcesao {
                 Console.Write("Check-out date (dd/MM/yyyy): ");
                 checkOut = DateTime.Parse(Console.ReadLine());
 
-                DateTime now = DateTime.Now;
-
-                if(checkIn <= now || checkIn <= now) {
-                    Console.WriteLine("Error in reservation: Reservation dates for updates must be future dates");
+                string error = reservation.UpdatesDates(checkIn, checkOut);
+               
+                if(error != null) {
+                    Console.WriteLine($"Error in reservation {error}");
                 }
-                else if (checkOut <= checkIn) {
-                    Console.WriteLine("Error in reservation: Check-out date must be after check-in a date");
-                } else {
-                    reservation.UpdatesDates(checkIn, checkOut);
+                else {
                     Console.WriteLine($"Reservation: {reservation}");
                 }
 
