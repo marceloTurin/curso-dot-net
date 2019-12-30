@@ -90,6 +90,15 @@ namespace xadrez {
             return aux;
         }
 
+       
+        private Cor adversaria(Cor cor) {
+            if(cor == Cor.Branca) {
+                return Cor.Preta;
+            } else {
+                return Cor.Branca;
+            }
+        }
+
 
 
         public void colocarNovaPeca(char coluna, int linha, Peca peca) {
