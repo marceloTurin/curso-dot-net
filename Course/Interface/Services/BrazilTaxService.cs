@@ -1,5 +1,5 @@
 ﻿namespace Interface.Services {
-    class BrazilTaxService {
+    class BrazilTaxService : ITAxService {
         public double Tax(double amount) {
             if (amount <= 100) {
                 return amount * 0.2;
