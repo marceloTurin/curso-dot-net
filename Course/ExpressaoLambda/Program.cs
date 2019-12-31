@@ -16,19 +16,22 @@ namespace ExpressaoLambda {
             list.Add(new Product("Tablet", 350.50));
             list.Add(new Product("HD Case", 80.90));
 
-            list.RemoveAll(ProductTest);
-            //list.RemoveAll(p => p.Price >= 100);
+            Action<Product> act = p => {
+                p.Price += p.Price * 0.1;
+            };
 
-            foreach(Product p in list) {
-                Console.WriteLine(p); 
+            list.ForEach(UpdatePrice);
+            //list.ForEach(act);
+
+            foreach (Product p in list) {
+                Console.WriteLine(p);
             }
 
         }
 
-        //Predicate tem que retornar um bool 
-
-        public static bool ProductTest(Product p) {
-            return p.Price >= 100.0;
+        static void UpdatePrice(Product p) {
+            p.Price += p.Price * 0.1;
         }
+
     }
 }
