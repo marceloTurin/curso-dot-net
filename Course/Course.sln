@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TratamentoExcesao", "Tratam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{B5D52EF6-645D-4D00-A65F-EDA5B2CA44A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{2E8DACF1-AEAB-41DD-A7B5-ABF6A5145635}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{B5D52EF6-645D-4D00-A65F-EDA5B2CA44A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D52EF6-645D-4D00-A65F-EDA5B2CA44A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D52EF6-645D-4D00-A65F-EDA5B2CA44A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E8DACF1-AEAB-41DD-A7B5-ABF6A5145635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8DACF1-AEAB-41DD-A7B5-ABF6A5145635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8DACF1-AEAB-41DD-A7B5-ABF6A5145635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8DACF1-AEAB-41DD-A7B5-ABF6A5145635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
