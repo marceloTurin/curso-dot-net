@@ -11,19 +11,21 @@ namespace ExpressaoLambda {
 
         static void Main(string[] args) {
 
-            List<Product> list = new List<Product>();
-            list.Add(new Product("Tv", 900.00));
-            list.Add(new Product("Mouse", 50.00));
-            list.Add(new Product("Tablet", 350.50));
-            list.Add(new Product("HD Case", 80.90));
+            //Specify the data source
 
-            //Recebe produto, retorna string
-            Func<Product, string> func = p => p.Name.ToUpper();
+            int[] numbers = new int[] { 1, 2, 3, 4, 5 };
 
-            List<string> result = list.Select(p => p.Name.ToUpper()).ToList();
+            //Define the query expression
 
-            foreach(string s in result) {
-                Console.WriteLine(s);
+            // o where filtra e o select seleciona os resultado do where
+            IEnumerable<int> result = numbers
+                .Where(x => x % 2 == 0)
+                .Select(x => x * 10);
+
+            //Execute the query
+
+            foreach (int x in result) {
+                Console.WriteLine(x);
             }
 
         }
