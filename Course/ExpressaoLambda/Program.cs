@@ -2,6 +2,7 @@
 using ExpressaoLambda.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ExpressaoLambda {
     class Program {
@@ -16,22 +17,21 @@ namespace ExpressaoLambda {
             list.Add(new Product("Tablet", 350.50));
             list.Add(new Product("HD Case", 80.90));
 
-            Action<Product> act = p => {
-                p.Price += p.Price * 0.1;
-            };
+            //Recebe produto, retorna string
+            Func<Product, string> func = p => p.Name.ToUpper();
 
-            list.ForEach(UpdatePrice);
-            //list.ForEach(act);
+            List<string> result = list.Select(p => p.Name.ToUpper()).ToList();
 
-            foreach (Product p in list) {
-                Console.WriteLine(p);
+            foreach(string s in result) {
+                Console.WriteLine(s);
             }
 
         }
 
-        static void UpdatePrice(Product p) {
-            p.Price += p.Price * 0.1;
+        static string NameUpper(Product p) {
+            return p.Name.ToUpper();
         }
 
+ 
     }
 }
